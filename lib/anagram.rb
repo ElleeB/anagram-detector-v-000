@@ -12,7 +12,7 @@ class Anagram
       # => [["a"], ["a", "b", "c"], ["a", "d", "b"], ["a", "d", "d"], ["a", "b", "c"], ["a", "c"], ["d", "b"]]
     split_word = @word.split("")
       # => ["a", "b"]
-    letter_array.any? do |letters|
+    letter_array.find_all do |letters|
       if letters.sort == split_word.sort # => false, false, false, false, true, false, false
         matches << letters.join
       end
